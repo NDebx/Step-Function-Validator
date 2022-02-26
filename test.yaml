@@ -1,0 +1,10 @@
+type: object
+properties:
+  testing:
+    type: array
+    items:
+      enum:
+        - this
+        - is
+        - a
+        - test

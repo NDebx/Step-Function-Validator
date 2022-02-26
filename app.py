@@ -1,14 +1,8 @@
-# Imports 
-import argparse
-import sys
+from jsonschema import validate
+import yaml
 
-def main():
-
-
-    pass 
+yaml_schema = open("test.yaml", "r")
+json_schema = open("test.json", "r")
 
 
-
-if __name__ == '__main__':
-    main()
-
+validate(yaml.full_load(json_schema.read()), yaml.full_load(yaml_schema.read())) # passes
