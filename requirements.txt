@@ -1,0 +1,8 @@
+# This file is used by pip to install required python packages
+# Usage: pip install -r requirements.txt
+
+# Step Function Validator required library
+click==8.0.4
+jsonschema==4.4.0
+PyYAML==6.0
+
