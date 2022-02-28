@@ -1,5 +1,5 @@
 
-# Step Function Validator (AWS)
+# Step Function Validator for e.g. (AWS)
 
 An issue we have is that we are quite human and we often make mistakes in the YAML "code". 
 These could be syntactical errors (for example, an incorrect indent), but also semantical (for example, forgetting to add a required parameter to a step). 
