@@ -3,12 +3,12 @@ import unittest
 import jsonschema
 import yaml
 
-from stepfunction_validator import load_json_schema, load_yaml, validate_stepfunction
+from stepfunction_validator.stepfunction_validator import load_json_schema, load_yaml, validate_stepfunction
 
 
 class TestValidation(unittest.TestCase):
     def setUp(self):
-        self.json_schema = load_json_schema("../stepfunctions_schema.json")
+        self.json_schema = load_json_schema("../stepfunction_validator/stepfunctions_schema.json")
 
     def test_ValidStepFunction(self):
         invalid = load_yaml("test_scenarios/step_function_invalid.yml")
