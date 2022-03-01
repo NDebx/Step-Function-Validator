@@ -11,10 +11,9 @@ class TestValidation(unittest.TestCase):
         self.json_schema = load_json_schema("../stepfunction_validator/stepfunctions_schema.json")
 
     def test_ValidStepFunction(self):
-        invalid = load_yaml("test_scenarios/step_function_invalid.yml")
-        with self.assertRaises(jsonschema.exceptions.ValidationError):
-            result = validate_stepfunction(invalid, self.json_schema)
-            self.assertEqual(result, True)
+        valid = load_yaml("test_scenarios/step_function.yml")
+        result = validate_stepfunction(valid, self.json_schema)
+        self.assertEqual(result, True)
 
     def test_InvalidStepFunction(self):
         invalid = load_yaml("test_scenarios/step_function_invalid.yml")
