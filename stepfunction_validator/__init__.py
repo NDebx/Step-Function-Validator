@@ -17,11 +17,11 @@
 """A linter for AWS step functions files."""
 
 
-APP_NAME = 'stepfunction_validator'
-APP_VERSION = '0.0.1'
+APP_NAME = "stepfunction_validator"
+APP_VERSION = "0.0.2"
 APP_DESCRIPTION = __doc__
 
-__author__ = u'Nilesh Debix'
-__copyright__ = u'Copyright 2022, Nilesh Debix'
-__license__ = 'GPLv3'
+__author__ = u"Nilesh Debix"
+__copyright__ = u"Copyright 2022, Nilesh Debix"
+__license__ = "GPLv3"
 __version__ = APP_VERSION
