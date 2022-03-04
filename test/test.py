@@ -3,23 +3,30 @@ import unittest
 import jsonschema
 import yaml
 
-from stepfunction_validator.stepfunction_validator import load_json_schema, load_yaml, validate_stepfunction
+from stepfunction_validator.stepfunction_validator import (
+    StepFunctionValidatorException,
+    StepFunctionValidator,
+)
 
 
 class TestValidation(unittest.TestCase):
     def setUp(self):
-        self.json_schema = load_json_schema("../stepfunction_validator/stepfunctions_schema.json")
+        self.stepfunction_validator = StepFunctionValidator()
 
     def test_ValidStepFunction(self):
-        valid = load_yaml("test_scenarios/step_function.yml")
-        result = validate_stepfunction(valid, self.json_schema)
-        self.assertEqual(result, True)
+        result = self.stepfunction_validator.validate(
+            "test_scenarios/step_function.yml"
+        )
+        self.assertEqual(result.get("error"), None)
 
     def test_InvalidStepFunction(self):
-        invalid = load_yaml("test_scenarios/step_function_invalid.yml")
-        with self.assertRaises(jsonschema.exceptions.ValidationError):
-            result = validate_stepfunction(invalid, self.json_schema)
+        result = self.stepfunction_validator.validate(
+            "test_scenarios/step_function_invalid.yml"
+        )
+        self.assertIsNotNone(result.get("error"), None)
 
     def test_SyntaxErrorStepFunction(self):
-        with self.assertRaises(yaml.parser.ParserError):
-            invalid = load_yaml("test_scenarios/step_function_syntax.yml")
+        result = self.stepfunction_validator.validate(
+            "test_scenarios/step_function_syntax.yml"
+        )
+        self.assertIsNotNone(result.get("error"), None)
