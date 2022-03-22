@@ -1,4 +1,3 @@
-
 # Step Function Validator for e.g. (AWS)
 
 An issue we have is that we are quite human and we often make mistakes in the YAML "code". 
@@ -29,20 +28,29 @@ So we came up with this little tool.
     source env/bin/activate
 ```
 
-2. install requirement.txt file
+2. pip install the tool via pypi
 
 ```python
     ####################### [ NOTE !!! ] ############################################################
     #    you NEED to see in your command line the env before your prompt
     #    so you know that you are in your virtual environment:
     #
-    #    example: (env) nilesh@Mac%
+    #    example: (env) niels@Mac%
     ################################################################################################
 
     if above is clear then:
 
-    pip install -r requirement.txt # to install the required libraries
+    pip install stepfunction-validator or pip3 install stepfunction-validator # to install the required libraries and the tool
 
 ```
 
-3. More steps comming soon.
+
+## Usage/Examples
+
+```python
+    YAML validator for the CLI
+
+    Example: python app.py -c <test.yaml> [-s <stepfunctions_schema.json>]
+    This will validate a YAML file against the schema you provided in the CLI
+```
+
