@@ -12,9 +12,6 @@ LONG_DESCRIPTION = 'A package that allows to validate a YAML file against the sc
 
 # Setting up
 setup(
-    name="Step Function Validator",
-    author="b0tting, NileshDebix",
-    # author_email="",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=long_description
