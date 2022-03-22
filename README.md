@@ -50,7 +50,7 @@ So we came up with this little tool.
 ```python
     YAML validator for the CLI
 
-    Example: python app.py -c <test.yaml> [-s <stepfunctions_schema.json>]
+    Example: python app.py -c <test.yaml> [-s <stepfunctions_schema.json>] [--no-lint]
     This will validate a YAML file against the schema you provided in the CLI
 ```
 

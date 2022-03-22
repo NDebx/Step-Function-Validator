@@ -18,7 +18,7 @@
 
 
 APP_NAME = "stepfunction_validator"
-APP_VERSION = "0.0.3"
+APP_VERSION = "0.0.4"
 APP_DESCRIPTION = __doc__
 
 __author__ = u"Nilesh Debix"
