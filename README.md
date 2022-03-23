@@ -48,9 +48,12 @@ So we came up with this little tool.
 ## Usage/Examples
 
 ```python
-    YAML validator for the CLI
-
-    Example: python app.py -c <test.yaml> [-s <stepfunctions_schema.json>]
-    This will validate a YAML file against the schema you provided in the CLI
+     stepfunction_validator.exe [-s test.yaml] [-j <stepfunctions_schema.json>] [--no-lint]    
+```
+This will validate a YAML file against the schema you provided in the CLI. If the -c parameter is omitted, the script runs against every .yml file it can find in the current working directory. A default schema for AWS stepfunctions is included, but an overriding schema can be passed with the -j parameters. Skip linting with "--no-lint". If any linting, syntax or schema errors are found an exit code 1 will be returned with a list of errors found. Example output:
+``` 
+.\test\step_function_invalid.yml:1:missing document start "---" (document-start)
+.\test\step_function_invalid.yml:1:no new line character at the end of file (new-line-at-end-of-file)
+.\test\step_function_invalid.yml:'Pass' is not one of ['Choice']. Failed validating enum in deque([0, 'properties', 'Type', 'enum']): {'type': 'string', 'enum': ['Choice']}
 ```
 
